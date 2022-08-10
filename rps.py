@@ -8,7 +8,7 @@ class Player:
     their_move = None
 
     def move(self):
-        return 'rock'
+        return random.choice(moves)
 
     def learn(self, my_move, their_move):
         pass
@@ -102,10 +102,10 @@ class Game:
         for round in range(100):
             print(f"Round {round + 1}:")
             self.play_round()
-            if self.p1_score > self.p2_score + 2:
+            if self.p1_score > self.p2_score + 1:
                 print("**PLAYER 1 WINS THE GAME!**")
                 break
-            if self.p2_score > self.p1_score + 2:
+            if self.p2_score > self.p1_score + 1:
                 print("**PLAYER 2 WINS THE GAME!**")
                 break
         print("The final score is: ")
